@@ -3,18 +3,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.koi</groupId>
-    <artifactId>eureka-server</artifactId>
+    <groupId>com.hongv</groupId>
+    <artifactId>koi-eureka-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>eureka-server</name>
+    <name>koi-eureka-server</name>
     <description>Eureka server for koi</description>
 
     <parent>
-        <groupId>com.koi</groupId>
-        <artifactId>root</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>com.hongv</groupId>
+        <artifactId>koi-root</artifactId>
+        <version>1.0.0.RELEASE</version>
     </parent>
 
     <dependencies>
@@ -29,6 +29,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- Actuator 监控中心 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
     </dependencies>

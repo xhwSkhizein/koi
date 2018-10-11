@@ -3,17 +3,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.koi</groupId>
-    <artifactId>root</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>com.hongv</groupId>
+    <artifactId>koi-root</artifactId>
+    <version>1.0.0.RELEASE</version>
     <packaging>pom</packaging>
 
-    <name>koi</name>
+    <name>koi-root</name>
     <description>Koi - be cool, be koi.</description>
 
     <modules>
         <module>koi-core</module>
         <module>koi-eureka-server</module>
+        <module>koi-api</module>
     </modules>
 
 
@@ -33,6 +34,22 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.hongv</groupId>
+                <artifactId>koi-core</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hongv</groupId>
+                <artifactId>koi-eureka-server</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hongv</groupId>
+                <artifactId>koi-api</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -62,17 +79,6 @@
             <version>3.6.1</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
         <!-- configuration processor -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -87,15 +93,5 @@
         </dependency>
 
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
 
 </project>
