@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hongv</groupId>
-    <artifactId>koi-root</artifactId>
+    <artifactId>koi</artifactId>
     <version>1.0.0.RELEASE</version>
     <packaging>pom</packaging>
 
-    <name>koi-root</name>
+    <name>koi</name>
     <description>Koi - be cool, be koi.</description>
 
     <modules>

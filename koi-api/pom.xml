@@ -13,7 +13,7 @@
 
     <parent>
         <groupId>com.hongv</groupId>
-        <artifactId>koi-root</artifactId>
+        <artifactId>koi</artifactId>
         <version>1.0.0.RELEASE</version>
     </parent>
 
