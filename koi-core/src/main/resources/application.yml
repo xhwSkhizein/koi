@@ -1,0 +1,13 @@
+# 设置当前环境
+spring:
+  profiles:
+    active: dev
+
+# Actuator
+management:
+  server:
+    port: 9001
+  endpoints:
+    web:
+      exposure:
+        include: "*"  #监控所有的接口
