@@ -11,13 +11,6 @@
     <name>koi</name>
     <description>Koi - be cool, be koi.</description>
 
-    <modules>
-        <module>koi-core</module>
-        <module>koi-eureka-server</module>
-        <module>koi-api</module>
-    </modules>
-
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -25,11 +18,14 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <modules>
+        <module>koi-core</module>
+    </modules>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Finchley.SR1</spring-cloud.version>
     </properties>
 
     <dependencyManagement>
@@ -39,59 +35,58 @@
                 <artifactId>koi-core</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
-            <dependency>
-                <groupId>com.hongv</groupId>
-                <artifactId>koi-eureka-server</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.hongv</groupId>
-                <artifactId>koi-api</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-
+            <!-- Spring Cloud -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
+                <version>Finchley.SR1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- Apache Commons Libs-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.8.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-math3</artifactId>
+                <version>3.6.1</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
-    <dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
 
-        <!--Apache commons -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.8.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-            <version>4.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-math3</artifactId>
-            <version>3.6.1</version>
-        </dependency>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
+                    <!--默认关掉单元测试 -->
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-        <!-- configuration processor -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <!-- Actuator 监控中心 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-    </dependencies>
 
 </project>
