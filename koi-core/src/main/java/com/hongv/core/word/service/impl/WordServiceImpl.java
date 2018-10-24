@@ -13,7 +13,7 @@ import java.util.List;
  * @author xuhongwei5
  * @since 2018/10/11 19:35
  */
-@Service
+@Service("wordService")
 public class WordServiceImpl implements WordService {
 
     private final WordDAO wordDAO;
