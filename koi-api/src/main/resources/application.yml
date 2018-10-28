@@ -3,6 +3,9 @@ spring:
   profiles:
     active: dev
 
+server:
+  port: 8081
+
 # Actuator
 management:
   server:
@@ -13,9 +16,7 @@ management:
         include: "*"  #监控所有的接口
 
 # Eureka
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8762/eureka/
-server:
-  port: 8761
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/
