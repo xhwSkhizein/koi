@@ -1,5 +1,7 @@
 package com.hongv.koi.word.domain;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import java.util.Date;
 
 /**
@@ -29,5 +31,10 @@ public class Word {
 
     public Date getCreateTime() {
         return createTime;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
     }
 }

@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -37,7 +38,9 @@ public class WordCollectController {
     @ApiOperation(value = "单词列表", notes = "单词列表")
     @GetMapping("/all")
     public ResponseEntity all() {
-        String wordList = wordService.findAll()
+        List<Word> all = wordService.findAll();
+        logger.info("{}", all);
+        String wordList = all
                 .stream()
                 .map(Word::getWord)
                 .collect(Collectors.joining("\n"));

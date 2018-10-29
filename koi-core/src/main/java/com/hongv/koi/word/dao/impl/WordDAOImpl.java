@@ -2,6 +2,9 @@ package com.hongv.koi.word.dao.impl;
 
 import com.hongv.koi.word.dao.WordDAO;
 import com.hongv.koi.word.domain.Word;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -20,6 +23,8 @@ import java.util.List;
  */
 @Repository
 public class WordDAOImpl implements WordDAO, RowMapper<Word> {
+
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
     private final NamedParameterJdbcTemplate jdbcTemplate;
 
@@ -57,7 +62,8 @@ public class WordDAOImpl implements WordDAO, RowMapper<Word> {
 
     @Override
     public List<Word> findAll() {
-
-        return jdbcTemplate.query("select * from word", this);
+        List<Word> list = jdbcTemplate.query("select * from word", this);
+        logger.info("{}", StringUtils.join(list, ";"));
+        return list;
     }
 }
