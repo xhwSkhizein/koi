@@ -4,9 +4,9 @@ spring:
     hikari:
       pool-name: HikariCP
       driver-class-name: com.mysql.jdbc.Driver
-      jdbc-url: jdbc:mysql://172.17.0.2:3306/word?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+      jdbc-url: jdbc:mysql://localhost:3306/word?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
       username: root
-      password: qweasd
+      password: 123456
       connection-test-query: SELECT 1
       auto-commit: true
       minimum-idle: 5
